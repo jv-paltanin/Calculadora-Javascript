@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>CalculadoraExpert</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #b3ecff;
+        }
+
+        .textview {
+            width: 200px;
+            height: 50px;
+        }
+
+        input {
+            width: 50px;
+            height: 50px;
+        }
+
+        .estrutura {
+            margin-left: 40.5%;
+            width: 214px;
+            border: 7px solid orange;
+
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function insert(num) {
+            document.form.textview.value = document.form.textview.value + num;
+        }
+        function equal() {
+            exp = document.form.textview.value;
+            if (exp) {
+                document.form.textview.value = eval(exp);
+            }
+        }
+        function c() {
+            document.form.textview.value = "";
+        }
+        function back() {
+            var exp = document.form.textview.value;
+            document.form.textview.value = exp.substring(0, exp.length - 1);
+        }
+
+        function reset(name) {
+            var exp1 = document.form.textview.value;
+            document.form.textview.value = exp1.substring(0, exp1.length - 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Calculadora Expert</h2>
+    <div class="estrutura">
+        <form name='form'>
+            <input class="textview" name='textview'>
+        </form> <br>
+        <input type="button" class='button' onclick="back()" value="volta">
+        <input type="reset" class='button' onclick="reset()" value="limpa"><br>
+        <input type="button" class='button' onclick="insert(7)" value="7">
+        <input type="button" class='button' onclick="insert(8)" value="8">
+        <input type="button" class='button' onclick="insert(9)" value="9">
+        <input type="button" class='button' onclick="insert('/')" value="/"><br>
+        <input type="button" class='button' onclick="insert(4)" value="4">
+        <input type="button" class='button' onclick="insert(5)" value="5">
+        <input type="button" class='button' onclick="insert(6)" value="6">
+        <input type="button" class='button' onclick="insert('*')" value="*"><br>
+        <input type="button" class='button' onclick="insert(1)" value="1">
+        <input type="button" class='button' onclick="insert(2)" value="2">
+        <input type="button" class='button' onclick="insert(3)" value="3">
+        <input type="button" class='button' onclick='insert("-")' value="-"><br>
+        <input type="button" class='button' onclick="insert(0)" value="0">
+        <input type="button" class='button' onclick="insert(',')" value=",">
+        <input type="button" class='button' onclick='equal()' value="=">
+        <input type="button" class='button' onclick="insert('+')" value="+">
+        <br>
+
+    </div>
+</body>
+
+</html>
